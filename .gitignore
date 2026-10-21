@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling caches & benchmarks
+.pytest_cache/
+.benchmarks/
+.benchmark/
+.mypy_cache/
+.ruff_cache/
+
+# OnyxSi runtime state (task wiki, antibody store, leases, spillover)
+.onyxsi/
+
+# Internal working drafts & blueprints
+md/
+
+# OS noise
+.DS_Store
+Thumbs.db

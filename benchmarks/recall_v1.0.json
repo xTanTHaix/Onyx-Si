@@ -1,0 +1,3273 @@
+{
+  "corpus": {
+    "edges": 299,
+    "functions": 348,
+    "queries": 116,
+    "seed": 7,
+    "top_k": 5
+  },
+  "docstrings_held_out": {
+    "hit_at_1": 0.2586,
+    "hit_at_5": 0.5776,
+    "mrr": 0.3823,
+    "recall_at_5": 0.4223
+  },
+  "docstrings_indexed_upper_bound": {
+    "hit_at_1": 1.0,
+    "hit_at_5": 1.0,
+    "mrr": 1.0,
+    "recall_at_5": 0.8022
+  },
+  "held_out_per_query": [
+    {
+      "query": "commits speculative ram modifications disk atomically per file ordering syntax gate write",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 10,
+      "returned": [
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk",
+        "onyxsi.server:main",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.server:OnyxSiServer.shutdown"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+    },
+    {
+      "query": "data path via tempfile fsync replace",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._atomic_write",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.replace",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.generate_handoff",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._sync_progress_markdown"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._atomic_write"
+    },
+    {
+      "query": "coalesces adjacent contiguous pieces keep piece table compact pieces",
+      "rank": 2,
+      "recall_at_5": 0.6667,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.insert",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.delete",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._rebuild_index"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce"
+    },
+    {
+      "query": "computes structural template signature normalizing numbers hex pointers",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.gateway.stream_folder:StreamFolder._line_fingerprint",
+        "onyxsi.hal.trie_index:CompactRadixSymbolIndex.__init__",
+        "onyxsi.knowledge.compute_alu:SafeMathEvaluator.visit_BinOp",
+        "onyxsi.gateway.stream_folder:StreamFolder.fold_stream",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.register_stream_handle"
+      ],
+      "target": "onyxsi.gateway.stream_folder:StreamFolder._line_fingerprint"
+    },
+    {
+      "query": "lazily indexes hybridsearchengine csr graph bm25 passes forward references resolve collect symbols",
+      "rank": 0,
+      "recall_at_5": 0.1429,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.get_forward_neighbors",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.__init__",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.prepare",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bfs_neighbors",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._ensure_workspace_index"
+    },
+    {
+      "query": "calculates bm25 matching documents",
+      "rank": 0,
+      "recall_at_5": 0.3333,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.build",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.prepare",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search.hybrid_score",
+        "onyxsi.server:OnyxSiServer._handle_graph_compute"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.score"
+    },
+    {
+      "query": "stage commits verified appends entry onyxsi flight log",
+      "rank": 1,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload"
+    },
+    {
+      "query": "creates nanocheckpoint snapshot sub millisecond rollback",
+      "rank": 0,
+      "recall_at_5": 0.3333,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._snapshot_flight",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.rollback",
+        "onyxsi.hal.telemetry:ToolTelemetry.snapshot",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.knowledge.csr_graph_bm25:tokenize_code"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.create_checkpoint"
+    },
+    {
+      "query": "raises invalidparamserror violate tool inputschema",
+      "rank": 2,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.gateway.meta_router:ToolNotBoundError.__init__",
+        "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments",
+        "onyxsi.gateway.meta_router:MetaToolRouter.register_handler",
+        "onyxsi.gateway.meta_router:MetaToolRouter.invoke",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate.runner"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments"
+    },
+    {
+      "query": "binds internal subsystem logic fixed meta tools",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter.list_tools",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate.runner",
+        "onyxsi.gateway.meta_router:MetaToolRouter.schema_token_count",
+        "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc",
+        "onyxsi.gateway.meta_router:MetaToolRouter.__init__"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._bind_handlers"
+    },
+    {
+      "query": "starts ram speculative simulation session",
+      "rank": 2,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.in_ram_pages_count",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_begin",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.__init__",
+        "onyxsi.server:OnyxSiServer._handle_ghost_sandbox",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._discard_unlocked"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_begin"
+    },
+    {
+      "query": "reconstructs full updated file payload",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._handle_vfs_inspect",
+        "onyxsi.server:OnyxSiServer._manifest_invariant",
+        "onyxsi.server:OnyxSiServer._ensure_workspace_index",
+        "onyxsi.server:OnyxSiServer._read_current",
+        "onyxsi.server:OnyxSiServer._err"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.flush_to_bytes"
+    },
+    {
+      "query": "folds text until emitted payload provably fits",
+      "rank": 3,
+      "recall_at_5": 0.75,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve_text",
+        "onyxsi.gateway.stream_folder:StreamFolder.fold_stream.flush_run",
+        "onyxsi.contextfs.token_governor:TokenGovernor.enforce_ceiling",
+        "onyxsi.server:OnyxSiServer._handle_vfs_inspect",
+        "onyxsi.contextfs.token_governor:TokenGovernor.estimate_tokens"
+      ],
+      "target": "onyxsi.contextfs.token_governor:TokenGovernor.enforce_ceiling"
+    },
+    {
+      "query": "lazily creates process wide fallback handle",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.token_governor:TokenGovernor.__init__",
+        "onyxsi.knowledge.compute_alu:SafeMathEvaluator.visit_Num",
+        "onyxsi.server:OnyxSiServer.process_line",
+        "onyxsi.server:OnyxSiServer.run_stdio_loop",
+        "onyxsi.server:OnyxSiServer._handle_single_request"
+      ],
+      "target": "onyxsi.contextfs.token_governor:_default_registry"
+    },
+    {
+      "query": "selects executes impacted",
+      "rank": 2,
+      "recall_at_5": 0.75,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.run_differential_tests",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bake",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.get_reverse_neighbors",
+        "onyxsi.server:OnyxSiServer._handle_ghost_sandbox"
+      ],
+      "target": "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.run_differential_tests"
+    },
+    {
+      "query": "evaluates falsification probe outcome probe fails probe succeeded discards ghost ram compresses",
+      "rank": 2,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._handle_hypothesis_branch",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine.falsify_branch",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine.register_branches",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine._extract_single_line_reason",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard"
+      ],
+      "target": "onyxsi.causal.hypothesis_engine:HypothesisEngine.falsify_branch"
+    },
+    {
+      "query": "computes bit word log2 bitwise steps",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload",
+        "onyxsi.server:OnyxSiServer._run_bisect",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.prefix_xor"
+    },
+    {
+      "query": "validates root cause ensures strategy repeat failed attempts resets budget max budget",
+      "rank": 1,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.reflection_gate",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.check_mutate_allowed",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.record_failure",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.record_strategy_attempt",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker._normalize"
+      ],
+      "target": "onyxsi.causal.error_budget:ErrorBudgetTracker.reflection_gate"
+    },
+    {
+      "query": "only least real test ran failed skipped lack registered callable graph only",
+      "rank": 3,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.run_differential_tests",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.__init__",
+        "onyxsi.knowledge.blast_test_runner:BlastTestResult.is_clean",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests",
+        "onyxsi.knowledge.blast_test_runner:BlastTestResult.__init__"
+      ],
+      "target": "onyxsi.knowledge.blast_test_runner:BlastTestResult.is_clean"
+    },
+    {
+      "query": "attempts instant hardware without copying bytes windows refs fsctl duplicate extents linux",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.hal.sandbox_enclave:SandboxEnclave.__init__",
+        "onyxsi.hal.wakeup:WakeupSignal.__init__",
+        "onyxsi.hal.syscall_guard:SyscallGuard.__init__",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.reflection_gate",
+        "onyxsi.server:OnyxSiServer._setup_signals"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:DualOsCowWorkspace.try_reflink_file"
+    },
+    {
+      "query": "applies speculative modification file ram",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.in_ram_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.__init__",
+        "onyxsi.server:OnyxSiServer.shutdown",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor._audit_file"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate"
+    },
+    {
+      "query": "reads file content overlay ram falls back disk",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor._audit_file",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate",
+        "onyxsi.server:OnyxSiServer._handle_ghost_sandbox",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_read"
+    },
+    {
+      "query": "reads newline delimited json rpc frame async producer aborting client drips bytes",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter.read_framed_message",
+        "onyxsi.server:OnyxSiServer.process_line",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64",
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.read_framed_message"
+    },
+    {
+      "query": "synchronous json dispatcher notifications",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.__init__",
+        "onyxsi.contracts:OnyxError.to_json",
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.server:OnyxSiServer.process_line",
+        "onyxsi.gateway.grammar_shield:GrammarShield._repair_json_string"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc"
+    },
+    {
+      "query": "resolves folder rejecting anything escapes wiki root accepts normalises",
+      "rank": 1,
+      "recall_at_5": 0.3333,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._task_dir",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.__init__",
+        "onyxsi.server:OnyxSiServer.__init__",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.get_progress"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager._task_dir"
+    },
+    {
+      "query": "reads view ghost overlay first disk",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate",
+        "onyxsi.server:OnyxSiServer._handle_ghost_sandbox",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._canonicalize"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._read_current"
+    },
+    {
+      "query": "replaces length bytes position pos data",
+      "rank": 2,
+      "recall_at_5": 0.2308,
+      "relevant": 13,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.insert",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.replace",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.delete",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.replace"
+    },
+    {
+      "query": "resolves target against workspace raising traversal",
+      "rank": 4,
+      "recall_at_5": 0.6,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.gateway.policy_gate:PolicyGate.resolve_path",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._canonicalize",
+        "onyxsi.gateway.policy_gate:PolicyGate._resolve_canonical_path",
+        "onyxsi.server:OnyxSiServer._resolve",
+        "onyxsi.server:OnyxSiServer._handle_vfs_inspect"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._resolve"
+    },
+    {
+      "query": "path prefix real containment checks jail",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.hal.sandbox_enclave:SandboxEnclave.enforcement_backend",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.contextfs.vfs_scanner:VfsScanner.scan.crawl",
+        "onyxsi.contextfs.vfs_scanner:VfsScanner.scan",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._atomic_write"
+      ],
+      "target": "onyxsi.hal.sandbox_enclave:SandboxEnclave.enforcement_backend"
+    },
+    {
+      "query": "best effort touched path paths failed",
+      "rank": 0,
+      "recall_at_5": 0.3333,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.modified_paths",
+        "onyxsi.server:OnyxSiServer.shutdown",
+        "onyxsi.server:OnyxSiServer._manifest_bytes",
+        "onyxsi.server:OnyxSiServer._handle_ghost_sandbox",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._restore_backups"
+    },
+    {
+      "query": "appends drained history path json object per line number records written creates",
+      "rank": 1,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.hal.telemetry:ToolTelemetry.flush_jsonl",
+        "onyxsi.hal.telemetry:ToolTelemetry._drain_locked",
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_all_meta_tools_gbnf",
+        "onyxsi.gateway.grammar_export:GrammarExporter._schema_type_to_gbnf",
+        "onyxsi.hal.telemetry:ToolTelemetry.snapshot"
+      ],
+      "target": "onyxsi.hal.telemetry:ToolTelemetry.flush_jsonl"
+    },
+    {
+      "query": "initializes folder spec progress json execution log absolute path folder",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log",
+        "onyxsi.server:OnyxSiServer._handle_wiki_task_sync",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.get_progress",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task"
+    },
+    {
+      "query": "mirrors json human reviewer scan",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.contracts:OnyxError.to_json",
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_all_meta_tools_gbnf",
+        "onyxsi.server:OnyxSiServer.process_line",
+        "onyxsi.gateway.grammar_shield:GrammarShield._repair_json_string"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager._sync_progress_markdown"
+    },
+    {
+      "query": "screens candidate code against active antibodies matching file path raises antibodyrejectionerror immediately",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.causal.antibody_memory:AntibodyMemory.check_mutation",
+        "onyxsi.deltafs.ast_lease_registry:AstLeaseRegistry.get_active_leases",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._task_dir",
+        "onyxsi.server:OnyxSiServer._handle_vfs_mutate",
+        "onyxsi.server:OnyxSiServer.shutdown"
+      ],
+      "target": "onyxsi.causal.antibody_memory:AntibodyMemory.check_mutation"
+    },
+    {
+      "query": "checks file within combined overlay disk view",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.server:OnyxSiServer._manifest_bytes",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_brace_language"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_exists"
+    },
+    {
+      "query": "event scan meth source topology cheap level sweeps heavy lifting bytes find",
+      "rank": 3,
+      "recall_at_5": 0.75,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._string_end",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer"
+    },
+    {
+      "query": "runs outward max hops bitset set tracking prevent cyclic traversal mapping node",
+      "rank": 3,
+      "recall_at_5": 0.4,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.run_differential_tests",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bfs_neighbors",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search",
+        "onyxsi.hal.trie_index:CompactRadixSymbolIndex.prefix_search"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bfs_neighbors"
+    },
+    {
+      "query": "splits identifiers constituent words handling snake case process manager process manager camelcase",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.hal.process_manager:ProcessManager.reload_config",
+        "onyxsi.hal.process_manager:ProcessManager.health_check_all",
+        "onyxsi.hal.process_manager:ProcessManager.get_status",
+        "onyxsi.hal.process_manager:ProcessManager.check_and_reload_config",
+        "onyxsi.hal.process_manager:ProcessManager._get_config_hash"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:tokenize_code"
+    },
+    {
+      "query": "extracts start start length piece table",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_slice",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.delete",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_bytes",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.get_slice"
+    },
+    {
+      "query": "updates json atomically syncs execution log",
+      "rank": 0,
+      "recall_at_5": 0.4286,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_json",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload",
+        "onyxsi.server:OnyxSiServer._handle_wiki_task_sync"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager.update_progress"
+    },
+    {
+      "query": "maps superblock created another process same machine same size windows uses tagged",
+      "rank": 4,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text",
+        "onyxsi.hal.shm_superblock:SuperblockHeader.from_bytes",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.__init__",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.attach",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.get_header"
+      ],
+      "target": "onyxsi.hal.shm_superblock:SharedMemorySuperblock.attach"
+    },
+    {
+      "query": "stage verifies blast radius test drift ceiling",
+      "rank": 2,
+      "recall_at_5": 0.75,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.compute_drift"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants"
+    },
+    {
+      "query": "marks file deleted ram tombstone",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.in_ram_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.__init__",
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor._audit_file",
+        "onyxsi.deltafs.ast_lease_registry:AstLeaseConflictError.__init__"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_delete"
+    },
+    {
+      "query": "inserts text bytes byte position pos",
+      "rank": 3,
+      "recall_at_5": 0.2857,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_brace_language",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.insert",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.replace",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._string_end"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.insert"
+    },
+    {
+      "query": "spills dirty ram pages files under dir",
+      "rank": 3,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.__init__",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.in_ram_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.total_dirty_bytes"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk"
+    },
+    {
+      "query": "renders entire document contiguous",
+      "rank": 5,
+      "recall_at_5": 0.3333,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.total_length",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_text",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.replace",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_line_range",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_bytes"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.get_bytes"
+    },
+    {
+      "query": "validates dag steps execution order raises cyclicalpipelineerror cycles",
+      "rank": 3,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.execute_pipeline",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate",
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.topological_sort",
+        "onyxsi.server:OnyxSiServer._run_bisect",
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor._resolve_bindings"
+      ],
+      "target": "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.topological_sort"
+    },
+    {
+      "query": "reads length bytes starting offset merging baseline dirty pages",
+      "rank": 2,
+      "recall_at_5": 0.5,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.read_at",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.total_dirty_bytes",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.pop",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.read_at"
+    },
+    {
+      "query": "rebuilds prefix sum log binary search",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.hal.trie_index:CompactRadixSymbolIndex.prefix_search",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument._rebuild_index"
+    },
+    {
+      "query": "pure helper tests tools already hold tool duration",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter.invoke",
+        "onyxsi.gateway.meta_router:MetaToolRouter.list_tools",
+        "onyxsi.gateway.meta_router:MetaToolRouter._emit",
+        "onyxsi.gateway.meta_router:MetaToolRouter.schema_token_count",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate.runner"
+      ],
+      "target": "onyxsi.hal.telemetry:summarize"
+    },
+    {
+      "query": "folds repetitive lines oversized single lines piecetabledocument backed ref",
+      "rank": 4,
+      "recall_at_5": 0.3333,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.gateway.stream_folder:StreamFolder.fold_stream.flush_run",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine._extract_single_line_reason",
+        "onyxsi.deltafs.ast_conflict_merger:ConflictFreeAstMerger._inject_imports",
+        "onyxsi.gateway.stream_folder:StreamFolder.fold_stream",
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_tool_gbnf"
+      ],
+      "target": "onyxsi.gateway.stream_folder:StreamFolder.fold_stream"
+    },
+    {
+      "query": "records invocation never raises telemetry must break",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter._emit",
+        "onyxsi.server:OnyxSiServer.__init__",
+        "onyxsi.hal.telemetry:ToolTelemetry.flush_jsonl",
+        "onyxsi.server:OnyxSiServer.shutdown",
+        "onyxsi.hal.telemetry:ToolTelemetry._drain_locked"
+      ],
+      "target": "onyxsi.hal.telemetry:ToolTelemetry.record"
+    },
+    {
+      "query": "generates agent inside task folder contains necessary context fresh sub agent resume",
+      "rank": 1,
+      "recall_at_5": 0.4,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.generate_handoff",
+        "onyxsi.deltafs.ast_lease_registry:AstLeaseRegistry.renew_lease",
+        "onyxsi.deltafs.ast_lease_registry:AstLeaseRegistry.acquire_lease",
+        "onyxsi.server:OnyxSiServer._handle_vfs_mutate",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager.generate_handoff"
+    },
+    {
+      "query": "releases mmap backing store history remains readable",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.initialize",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.__init__",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.attach",
+        "onyxsi.hal.telemetry:ToolTelemetry.__init__",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.initialize"
+      ],
+      "target": "onyxsi.hal.telemetry:ToolTelemetry.close"
+    },
+    {
+      "query": "drops delta state deletes spill file number spill files removed safe repeatedly",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.cleanup",
+        "onyxsi.hal.telemetry:ToolTelemetry._safe_state",
+        "onyxsi.deltafs.cow_workspace:DualOsCowWorkspace.get_delta_map",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.state",
+        "onyxsi.hal.telemetry:ToolTelemetry.snapshot"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.cleanup"
+    },
+    {
+      "query": "validates executes meta tool single choke point callers",
+      "rank": 0,
+      "recall_at_5": 0.1667,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter._unbound_handler._handle",
+        "onyxsi.gateway.meta_router:MetaToolRouter.register_handler",
+        "onyxsi.gateway.meta_router:MetaToolRouter.is_bound",
+        "onyxsi.gateway.meta_router:MetaToolRouter._unbound_handler",
+        "onyxsi.gateway.meta_router:MetaToolRouter._emit"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.invoke"
+    },
+    {
+      "query": "high speed structural balance top level block extractor balanced max nesting depth",
+      "rank": 0,
+      "recall_at_5": 0.4,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.gateway.grammar_shield:GrammarShield.__init__",
+        "onyxsi.gateway.grammar_shield:GrammarShield._check_nesting_depth",
+        "onyxsi.server:OnyxSiServer._syntax_check",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.reset"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology"
+    },
+    {
+      "query": "computes causal vector fraction modified targets fall outside declared blast radius",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.compute_drift",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.compute_drift"
+    },
+    {
+      "query": "resolves handle uri payload validates ttl source sha freshness",
+      "rank": 3,
+      "recall_at_5": 0.4,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.register_code_handle",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.register_stream_handle",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve_text",
+        "onyxsi.contextfs.token_governor:TokenGovernor.enforce_ceiling"
+      ],
+      "target": "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve"
+    },
+    {
+      "query": "bakes adjacency lists contiguous csr soa arrays topology has changed since last",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.__init__",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.server:OnyxSiServer._syntax_check"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bake"
+    },
+    {
+      "query": "deletes length bytes starting position pos",
+      "rank": 3,
+      "recall_at_5": 0.8,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.insert",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.replace",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.delete",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.delete"
+    },
+    {
+      "query": "finds index within log bisect prefix sums",
+      "rank": 2,
+      "recall_at_5": 0.25,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument._rebuild_index",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.__init__",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset"
+    },
+    {
+      "query": "index quote closes opened start only escapes next byte matching per byte",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._string_end",
+        "onyxsi.deltafs.ast_conflict_merger:ConflictFreeAstMerger.merge_patches",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.allocate_slot",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.read_at"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._string_end"
+    },
+    {
+      "query": "depth change across byte chunk popcnt popcnt",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_brace_language",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.__init__",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64",
+        "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.brace_depth_at"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.net_brace_delta"
+    },
+    {
+      "query": "raises sandboxerror unless stays inside workspace root",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.server:main",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.__init__",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor.__init__",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._canonicalize",
+        "onyxsi.gateway.policy_gate:PolicyGate.__init__"
+      ],
+      "target": "onyxsi.hal.sandbox_enclave:SandboxEnclave.assert_path_allowed"
+    },
+    {
+      "query": "binds node name executable python",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.process_body_nodes",
+        "onyxsi.knowledge.compute_alu:SafeMathEvaluator.visit_Num",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner.prune_source",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.get_line_byte_offset"
+      ],
+      "target": "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.register_test_callable"
+    },
+    {
+      "query": "executes hybrid combining bm25 keyword matching hop csr graph expansion top node",
+      "rank": 2,
+      "recall_at_5": 0.375,
+      "relevant": 8,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.__init__",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.index_node",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.prepare",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search.hybrid_score"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search"
+    },
+    {
+      "query": "uri live handle active registry",
+      "rank": 5,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve_text",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.register_stream_handle",
+        "onyxsi.contextfs.token_governor:TokenGovernor.enforce_ceiling",
+        "onyxsi.contextfs.token_governor:TokenGovernor.can_resolve"
+      ],
+      "target": "onyxsi.contextfs.token_governor:TokenGovernor.can_resolve"
+    },
+    {
+      "query": "bits set paint whole string comment regions once",
+      "rank": 0,
+      "recall_at_5": 0.5,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.reset",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._string_end",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:_bit_range"
+    },
+    {
+      "query": "raises mutatelockedbybudgeterror error budget exhausted",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.check_mutate_allowed",
+        "onyxsi.server:OnyxSiServer._handle_vfs_mutate",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.__init__",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.record_failure",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker._normalize"
+      ],
+      "target": "onyxsi.causal.error_budget:ErrorBudgetTracker.check_mutate_allowed"
+    },
+    {
+      "query": "emergency discards ghost ram resets state",
+      "rank": 2,
+      "recall_at_5": 0.75,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.abort_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.__init__",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.abort_flight"
+    },
+    {
+      "query": "extracts lines start end indexed inclusive",
+      "rank": 2,
+      "recall_at_5": 0.5,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._apply_edit",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_line_range",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.process_body_nodes",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.get_line_byte_offset",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.get_line_range"
+    },
+    {
+      "query": "name forbidden",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.causal.antibody_memory:AntibodyRejectionError.__init__",
+        "onyxsi.causal.antibody_memory:AntibodyRecord.to_dict",
+        "onyxsi.causal.antibody_memory:AntibodyRecord.from_dict",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate",
+        "onyxsi.causal.antibody_memory:AntibodyMemory.check_mutation"
+      ],
+      "target": "onyxsi.hal.syscall_guard:SyscallGuard.is_blocked"
+    },
+    {
+      "query": "parses json string applying deterministic needed",
+      "rank": 4,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_all_meta_tools_gbnf",
+        "onyxsi.gateway.grammar_shield:GrammarShield._repair_json_string",
+        "onyxsi.gateway.grammar_export:GrammarExporter._schema_type_to_gbnf",
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.gateway._meta_specs:build_raw_specs"
+      ],
+      "target": "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair"
+    },
+    {
+      "query": "stage declares blast radius initial hypothesis",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight"
+    },
+    {
+      "query": "walks csr reverse edges modified node max hops test name hop distance",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.run_differential_tests",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bake",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bfs_neighbors",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.get_reverse_neighbors"
+      ],
+      "target": "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests"
+    },
+    {
+      "query": "renders entire document string",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_all_meta_tools_gbnf",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._string_end",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.reset",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.get_text"
+    },
+    {
+      "query": "writes containing last recorded kernel events",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.causal.micro_wal:MicroWAL.write_crash_repro",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.causal.micro_wal:MicroWAL.get_recent_events",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.causal.micro_wal:MicroWAL.__init__"
+      ],
+      "target": "onyxsi.causal.micro_wal:MicroWAL.write_crash_repro"
+    },
+    {
+      "query": "wraps compact prose surface see meta metatoolspec objects",
+      "rank": 3,
+      "recall_at_5": 0.3333,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.gateway.meta_router:MethodNotFoundError.__init__",
+        "onyxsi.gateway.meta_router:MetaToolRouter.list_tools",
+        "onyxsi.gateway.meta_router:_build_default_8_specs",
+        "onyxsi.gateway.meta_router:MetaToolSpec.to_mcp_dict",
+        "onyxsi.gateway.meta_router:MetaToolRouter.schema_token_count"
+      ],
+      "target": "onyxsi.gateway.meta_router:_build_default_8_specs"
+    },
+    {
+      "query": "staged file parses",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._read_current",
+        "onyxsi.server:OnyxSiServer._handle_ghost_sandbox",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor._audit_file",
+        "onyxsi.server:OnyxSiServer._snapshot_flight",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor._check_module"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._manifest_invariant"
+    },
+    {
+      "query": "always kept explicit callers cannot mistake policy enforcement",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.hal.syscall_guard:SyscallGuard.enforcement_backend",
+        "onyxsi.hal.sandbox_enclave:SandboxEnclave.enforcement_backend",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.add_document",
+        "onyxsi.gateway.policy_gate:PolicyGate.__init__",
+        "onyxsi.gateway.policy_gate:PolicyGate.mask_secrets"
+      ],
+      "target": "onyxsi.hal.syscall_guard:SyscallGuard.is_enforcing"
+    },
+    {
+      "query": "parsed json data specified task",
+      "rank": 0,
+      "recall_at_5": 0.2,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_json",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._sync_progress_markdown",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.update_progress"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager.get_progress"
+    },
+    {
+      "query": "appends timestamped line",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.gateway.stream_folder:StreamFolder._line_fingerprint",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_line_range",
+        "onyxsi.gateway.stream_folder:StreamFolder._is_critical_error_line",
+        "onyxsi.gateway.stream_folder:StreamFolder.fold_stream",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.get_line_byte_offset"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log"
+    },
+    {
+      "query": "resolves backing file named superblock memfd create cannot opened name another process",
+      "rank": 5,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.attach",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.initialize",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.__init__",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.get_header",
+        "onyxsi.hal.shm_superblock:_posix_shm_path"
+      ],
+      "target": "onyxsi.hal.shm_superblock:_posix_shm_path"
+    },
+    {
+      "query": "installs clears invocation telemetry",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.server:OnyxSiServer.__init__",
+        "onyxsi.hal.telemetry:ToolTelemetry.__enter__",
+        "onyxsi.hal.telemetry:ToolTelemetry.closed",
+        "onyxsi.hal.telemetry:ToolTelemetry.__exit__",
+        "onyxsi.hal.telemetry:ToolTelemetry._safe_state"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.set_observer"
+    },
+    {
+      "query": "drains ring aggregate view whole history",
+      "rank": 2,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.hal.telemetry:ToolTelemetry.__init__",
+        "onyxsi.hal.telemetry:ToolTelemetry.snapshot",
+        "onyxsi.hal.telemetry:ToolTelemetry._drain_locked",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.pop",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.state"
+      ],
+      "target": "onyxsi.hal.telemetry:ToolTelemetry.snapshot"
+    },
+    {
+      "query": "writes content temporary file same directory replaces atomically",
+      "rank": 1,
+      "recall_at_5": 0.2857,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor.audit_directory",
+        "onyxsi.server:OnyxSiServer._handle_vfs_inspect",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor._audit_file",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text"
+    },
+    {
+      "query": "records policy only kernel filter installed",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.hal.telemetry:summarize",
+        "onyxsi.hal.telemetry:ToolTelemetry.flush_jsonl",
+        "onyxsi.gateway.policy_gate:PolicyGate.__init__",
+        "onyxsi.causal.antibody_memory:AntibodyMemory._rebuild_fast_list",
+        "onyxsi.gateway.policy_gate:PolicyGate.mask_secrets"
+      ],
+      "target": "onyxsi.hal.syscall_guard:SyscallGuard.enforcement_backend"
+    },
+    {
+      "query": "executes topological order resolving prev output rolling back failure",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.execute_pipeline",
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor._resolve_bindings",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate",
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.topological_sort",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure"
+      ],
+      "target": "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.execute_pipeline"
+    },
+    {
+      "query": "scans bytes dual bitplane structural masks",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.get_line_byte_offset",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._string_end",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64"
+    },
+    {
+      "query": "validates have falsification probes mutually orthogonal",
+      "rank": 1,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine.register_branches",
+        "onyxsi.server:OnyxSiServer._handle_hypothesis_branch",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.server:OnyxSiServer._run_bisect",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine.falsify_branch"
+      ],
+      "target": "onyxsi.causal.hypothesis_engine:HypothesisEngine.register_branches"
+    },
+    {
+      "query": "minimal dependency free json subset validator supports type enum minimum maximum minitems",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.gateway.meta_router:_validate_against_schema",
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.gateway.grammar_export:GrammarExporter._schema_type_to_gbnf",
+        "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor._check_module"
+      ],
+      "target": "onyxsi.gateway.meta_router:_validate_against_schema"
+    },
+    {
+      "query": "adds replaces keeping postings duplicate free",
+      "rank": 3,
+      "recall_at_5": 0.3333,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.__init__",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.free_slot",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.add_document",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.score",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.reflection_gate"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.add_document"
+    },
+    {
+      "query": "dirty still resident must respect quota",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.build",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.total_dirty_bytes",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.dirty_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.in_ram_pages_count"
+    },
+    {
+      "query": "validates payload against json schema coerces primitive string number mismatches",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.gateway.grammar_export:GrammarExporter._schema_type_to_gbnf",
+        "onyxsi.gateway.meta_router:_validate_against_schema",
+        "onyxsi.gateway.meta_router:MetaToolRouter.schema_token_count",
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_all_meta_tools_gbnf",
+        "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments"
+      ],
+      "target": "onyxsi.gateway.grammar_shield:GrammarShield.validate_and_coerce"
+    },
+    {
+      "query": "evaluates mathematical string expression deterministically safely",
+      "rank": 2,
+      "recall_at_5": 0.3333,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.knowledge.compute_alu:SafeMathEvaluator.visit_Expression",
+        "onyxsi.knowledge.compute_alu:eval_math",
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_all_meta_tools_gbnf",
+        "onyxsi.knowledge.compute_alu:SafeMathEvaluator.visit_Call",
+        "onyxsi.knowledge.compute_alu:SafeMathEvaluator.visit_BinOp"
+      ],
+      "target": "onyxsi.knowledge.compute_alu:eval_math"
+    },
+    {
+      "query": "bitplane streaming path byte plane object per block",
+      "rank": 0,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.reset",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.__init__",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_brace_language"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked"
+    },
+    {
+      "query": "gracefully releases lease discards ghost state stops loop",
+      "rank": 1,
+      "recall_at_5": 0.2857,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.server:OnyxSiServer.shutdown",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.abort_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.server:OnyxSiServer.run_stdio_loop"
+      ],
+      "target": "onyxsi.server:OnyxSiServer.shutdown"
+    },
+    {
+      "query": "total tracked whether currently ram spilled",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.__init__",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.in_ram_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spilled_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.cleanup"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.dirty_pages_count"
+    },
+    {
+      "query": "dirty currently disk",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.total_dirty_bytes",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.dirty_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.deltafs.ast_lease_registry:AstLeaseConflictError.__init__"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spilled_pages_count"
+    },
+    {
+      "query": "finds earliest step steps where invariant doc get bytes automatically rolls doc",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.server:OnyxSiServer._snapshot_flight",
+        "onyxsi.server:OnyxSiServer._run_bisect",
+        "onyxsi.server:OnyxSiServer._reset_flight_bisect",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+      ],
+      "target": "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure"
+    },
+    {
+      "query": "appends real checkpoint staged file manifest bisect",
+      "rank": 2,
+      "recall_at_5": 0.3333,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._run_bisect",
+        "onyxsi.server:OnyxSiServer._snapshot_flight",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.server:OnyxSiServer._manifest_bytes",
+        "onyxsi.server:OnyxSiServer._reset_flight_bisect"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._snapshot_flight"
+    },
+    {
+      "query": "exact nesting byte offset bit idx within chunk",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.allocate_slot",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_brace_language",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.brace_depth_at"
+    },
+    {
+      "query": "canonical currently staged session read only view",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._read_current",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_read",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_delete",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_read_text"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.modified_paths"
+    },
+    {
+      "query": "runs headless event reading stdin responding stdout",
+      "rank": 1,
+      "recall_at_5": 0.75,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.server:OnyxSiServer.run_stdio_loop",
+        "onyxsi.hal.process_manager:ProcessManager.spawn",
+        "onyxsi.causal.micro_wal:MicroWAL.record",
+        "onyxsi.server:OnyxSiServer.shutdown",
+        "onyxsi.server:main"
+      ],
+      "target": "onyxsi.server:OnyxSiServer.run_stdio_loop"
+    },
+    {
+      "query": "real handler fail closed stub registered",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter.__init__",
+        "onyxsi.gateway.meta_router:ToolNotBoundError.__init__",
+        "onyxsi.hal.telemetry:ToolTelemetry.closed",
+        "onyxsi.gateway.meta_router:MetaToolRouter._unbound_handler",
+        "onyxsi.gateway.meta_router:MetaToolRouter.register_handler"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.is_bound"
+    },
+    {
+      "query": "heuristic chars per token rule thumb tokenizer",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.contextfs.token_governor:TokenGovernor.estimate_tokens",
+        "onyxsi.contextfs.token_governor:TokenGovernor.enforce_ceiling",
+        "onyxsi.gateway.meta_router:MetaToolRouter.schema_token_count",
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_tool_gbnf",
+        "onyxsi.server:OnyxSiServer._handle_vfs_inspect"
+      ],
+      "target": "onyxsi.contextfs.token_governor:TokenGovernor.estimate_tokens"
+    },
+    {
+      "query": "decrements error budget locks mutation budget reaches",
+      "rank": 2,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.__init__",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.record_failure",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.check_mutate_allowed",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker._normalize",
+        "onyxsi.server:OnyxSiServer._handle_vfs_mutate"
+      ],
+      "target": "onyxsi.causal.error_budget:ErrorBudgetTracker.record_failure"
+    },
+    {
+      "query": "aborts speculative edits instantly ram disk remains untouched",
+      "rank": 0,
+      "recall_at_5": 0.0,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.in_ram_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.__init__",
+        "onyxsi.gateway.meta_router:_build_default_8_specs"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard"
+    },
+    {
+      "query": "recomputes corpus statistics postings authoritative incremental",
+      "rank": 2,
+      "recall_at_5": 0.5,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.add_document",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.build",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.score",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.__init__"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.build"
+    },
+    {
+      "query": "console entry point onyxsi workspace dir allow mutation without flush runs headless",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.server:main",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.flush_to_bytes",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text",
+        "onyxsi.server:OnyxSiServer.run_stdio_loop"
+      ],
+      "target": "onyxsi.server:main"
+    },
+    {
+      "query": "processes single raw json rpc text formatted reply",
+      "rank": 1,
+      "recall_at_5": 0.6,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.server:OnyxSiServer.process_line",
+        "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc._reply",
+        "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc",
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.server:OnyxSiServer._handle_single_request"
+      ],
+      "target": "onyxsi.server:OnyxSiServer.process_line"
+    },
+    {
+      "query": "tool definitions plain dicts name description input schema",
+      "rank": 4,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolSpec.to_mcp_dict",
+        "onyxsi.gateway.meta_router:_build_default_8_specs",
+        "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments",
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.gateway.meta_router:MetaToolRouter.__init__"
+      ],
+      "target": "onyxsi.gateway._meta_specs:build_raw_specs"
+    },
+    {
+      "query": "writes data byte offset dirtying only overlapping pages",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.read_at",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.get_line_byte_offset",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.pop",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at"
+    },
+    {
+      "query": "stage records ram mutation checks live causal drift vector",
+      "rank": 3,
+      "recall_at_5": 0.4,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn"
+    },
+    {
+      "query": "rolls back forward document state checkpoint microsecond time preserves append only add",
+      "rank": 0,
+      "recall_at_5": 0.3333,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.create_checkpoint",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.__init__",
+        "onyxsi.server:OnyxSiServer._run_bisect",
+        "onyxsi.server:OnyxSiServer._reset_flight_bisect"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.rollback"
+    }
+  ],
+  "upper_bound_per_query": [
+    {
+      "query": "commits speculative ram modifications disk atomically per file ordering syntax gate write",
+      "rank": 1,
+      "recall_at_5": 0.3,
+      "relevant": 10,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload",
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._atomic_write"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+    },
+    {
+      "query": "data path via tempfile fsync replace",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._atomic_write",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.replace",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._restore_backups",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._atomic_write"
+    },
+    {
+      "query": "coalesces adjacent contiguous pieces keep piece table compact pieces",
+      "rank": 1,
+      "recall_at_5": 0.8333,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_bytes",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.insert",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.delete",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._rebuild_index"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce"
+    },
+    {
+      "query": "computes structural template signature normalizing numbers hex pointers",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.gateway.stream_folder:StreamFolder._line_fingerprint",
+        "onyxsi.gateway.stream_folder:StreamFolder.fold_stream",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.register_stream_handle",
+        "onyxsi.gateway.stream_folder:StreamFolder._is_critical_error_line",
+        "onyxsi.gateway.stream_folder:StreamFolder.fold_stream.flush_run"
+      ],
+      "target": "onyxsi.gateway.stream_folder:StreamFolder._line_fingerprint"
+    },
+    {
+      "query": "lazily indexes hybridsearchengine csr graph bm25 passes forward references resolve collect symbols",
+      "rank": 1,
+      "recall_at_5": 0.4286,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._ensure_workspace_index",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.prepare",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.get_forward_neighbors",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.__init__",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.index_node"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._ensure_workspace_index"
+    },
+    {
+      "query": "calculates bm25 matching documents",
+      "rank": 1,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.score",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.build",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.prepare",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search.hybrid_score"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.score"
+    },
+    {
+      "query": "stage commits verified appends entry onyxsi flight log",
+      "rank": 1,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload"
+    },
+    {
+      "query": "creates nanocheckpoint snapshot sub millisecond rollback",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.create_checkpoint",
+        "onyxsi.server:OnyxSiServer._snapshot_flight",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.rollback",
+        "onyxsi.server:OnyxSiServer._reset_flight_bisect",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.create_checkpoint"
+    },
+    {
+      "query": "raises invalidparamserror violate tool inputschema",
+      "rank": 1,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments",
+        "onyxsi.hal.telemetry:ToolTelemetry.record",
+        "onyxsi.gateway.meta_router:MetaToolRouter.invoke",
+        "onyxsi.gateway.meta_router:ToolNotBoundError.__init__",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate.runner"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments"
+    },
+    {
+      "query": "binds internal subsystem logic fixed meta tools",
+      "rank": 1,
+      "recall_at_5": 0.3333,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._bind_handlers",
+        "onyxsi.gateway.meta_router:MetaToolRouter.list_tools",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate.runner",
+        "onyxsi.gateway.meta_router:MetaToolRouter.schema_token_count",
+        "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._bind_handlers"
+    },
+    {
+      "query": "starts ram speculative simulation session",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_begin",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate",
+        "onyxsi.server:OnyxSiServer._handle_ghost_sandbox",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_begin"
+    },
+    {
+      "query": "reconstructs full updated file payload",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.flush_to_bytes",
+        "onyxsi.server:OnyxSiServer._manifest_invariant",
+        "onyxsi.server:OnyxSiServer._handle_vfs_inspect",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.read_at",
+        "onyxsi.server:OnyxSiServer._err"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.flush_to_bytes"
+    },
+    {
+      "query": "folds text until emitted payload provably fits",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.contextfs.token_governor:TokenGovernor.enforce_ceiling",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve_text",
+        "onyxsi.server:OnyxSiServer._handle_vfs_inspect",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.register_stream_handle",
+        "onyxsi.contextfs.token_governor:TokenGovernor.estimate_tokens"
+      ],
+      "target": "onyxsi.contextfs.token_governor:TokenGovernor.enforce_ceiling"
+    },
+    {
+      "query": "lazily creates process wide fallback handle",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.token_governor:_default_registry",
+        "onyxsi.contextfs.token_governor:TokenGovernor.__init__",
+        "onyxsi.contextfs.token_governor:TokenGovernor.registry",
+        "onyxsi.knowledge.compute_alu:SafeMathEvaluator.visit_Num",
+        "onyxsi.server:OnyxSiServer.process_line"
+      ],
+      "target": "onyxsi.contextfs.token_governor:_default_registry"
+    },
+    {
+      "query": "selects executes impacted",
+      "rank": 1,
+      "recall_at_5": 0.75,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.run_differential_tests",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests",
+        "onyxsi.gateway.meta_router:MetaToolRouter.invoke",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search",
+        "onyxsi.server:OnyxSiServer._handle_ghost_sandbox"
+      ],
+      "target": "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.run_differential_tests"
+    },
+    {
+      "query": "evaluates falsification probe outcome probe fails probe succeeded discards ghost ram compresses",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine.falsify_branch",
+        "onyxsi.server:OnyxSiServer._handle_hypothesis_branch",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine._extract_single_line_reason",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine.register_branches",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard"
+      ],
+      "target": "onyxsi.causal.hypothesis_engine:HypothesisEngine.falsify_branch"
+    },
+    {
+      "query": "computes bit word log2 bitwise steps",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.prefix_xor",
+        "onyxsi.contextfs.bitplane_ast:_bit_range",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.prefix_xor"
+    },
+    {
+      "query": "validates root cause ensures strategy repeat failed attempts resets budget max budget",
+      "rank": 1,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.reflection_gate",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.check_mutate_allowed",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker._normalize",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.record_failure",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.record_strategy_attempt"
+      ],
+      "target": "onyxsi.causal.error_budget:ErrorBudgetTracker.reflection_gate"
+    },
+    {
+      "query": "only least real test ran failed skipped lack registered callable graph only",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.knowledge.blast_test_runner:BlastTestResult.is_clean",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.run_differential_tests",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.__init__",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests",
+        "onyxsi.knowledge.blast_test_runner:BlastTestResult.__init__"
+      ],
+      "target": "onyxsi.knowledge.blast_test_runner:BlastTestResult.is_clean"
+    },
+    {
+      "query": "attempts instant hardware without copying bytes windows refs fsctl duplicate extents linux",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:DualOsCowWorkspace.try_reflink_file",
+        "onyxsi.hal.sandbox_enclave:SandboxEnclave.__init__",
+        "onyxsi.hal.wakeup:WakeupSignal.__init__",
+        "onyxsi.hal.syscall_guard:SyscallGuard.__init__",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.reflection_gate"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:DualOsCowWorkspace.try_reflink_file"
+    },
+    {
+      "query": "applies speculative modification file ram",
+      "rank": 1,
+      "recall_at_5": 0.25,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_begin",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_delete",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate"
+    },
+    {
+      "query": "reads file content overlay ram falls back disk",
+      "rank": 1,
+      "recall_at_5": 0.25,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_read",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit",
+        "onyxsi.server:OnyxSiServer._read_current",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_exists"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_read"
+    },
+    {
+      "query": "reads newline delimited json rpc frame async producer aborting client drips bytes",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter.read_framed_message",
+        "onyxsi.server:OnyxSiServer.process_line",
+        "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc",
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.server:OnyxSiServer._handle_single_request"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.read_framed_message"
+    },
+    {
+      "query": "synchronous json dispatcher notifications",
+      "rank": 1,
+      "recall_at_5": 0.4,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc",
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.__init__",
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.server:OnyxSiServer.process_line",
+        "onyxsi.server:OnyxSiServer._handle_single_request"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc"
+    },
+    {
+      "query": "resolves folder rejecting anything escapes wiki root accepts normalises",
+      "rank": 1,
+      "recall_at_5": 0.8333,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._task_dir",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.generate_handoff",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.get_progress",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager._task_dir"
+    },
+    {
+      "query": "reads view ghost overlay first disk",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._read_current",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_exists",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_read",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_read_text"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._read_current"
+    },
+    {
+      "query": "replaces length bytes position pos data",
+      "rank": 1,
+      "recall_at_5": 0.3077,
+      "relevant": 13,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.replace",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.insert",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.delete",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._atomic_write",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.replace"
+    },
+    {
+      "query": "resolves target against workspace raising traversal",
+      "rank": 1,
+      "recall_at_5": 0.6,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._resolve",
+        "onyxsi.gateway.policy_gate:PolicyGate.resolve_path",
+        "onyxsi.server:OnyxSiServer._handle_vfs_inspect",
+        "onyxsi.gateway.policy_gate:PolicyGate._resolve_canonical_path",
+        "onyxsi.causal.antibody_memory:AntibodyMemory.check_mutation"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._resolve"
+    },
+    {
+      "query": "path prefix real containment checks jail",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.hal.sandbox_enclave:SandboxEnclave.enforcement_backend",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_exists",
+        "onyxsi.contextfs.vfs_scanner:VfsScanner.scan.crawl",
+        "onyxsi.contextfs.vfs_scanner:VfsScanner.scan",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._canonicalize"
+      ],
+      "target": "onyxsi.hal.sandbox_enclave:SandboxEnclave.enforcement_backend"
+    },
+    {
+      "query": "best effort touched path paths failed",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._restore_backups",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._atomic_write",
+        "onyxsi.server:OnyxSiServer._handle_ghost_sandbox",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.modified_paths"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._restore_backups"
+    },
+    {
+      "query": "appends drained history path json object per line number records written creates",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.hal.telemetry:ToolTelemetry.flush_jsonl",
+        "onyxsi.hal.telemetry:ToolTelemetry._drain_locked",
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_all_meta_tools_gbnf",
+        "onyxsi.server:OnyxSiServer.shutdown",
+        "onyxsi.hal.telemetry:ToolTelemetry.snapshot"
+      ],
+      "target": "onyxsi.hal.telemetry:ToolTelemetry.flush_jsonl"
+    },
+    {
+      "query": "initializes folder spec progress json execution log absolute path folder",
+      "rank": 1,
+      "recall_at_5": 0.6667,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task",
+        "onyxsi.server:OnyxSiServer._handle_wiki_task_sync",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._sync_progress_markdown",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task"
+    },
+    {
+      "query": "mirrors json human reviewer scan",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._sync_progress_markdown",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_json",
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.contracts:OnyxError.to_json"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager._sync_progress_markdown"
+    },
+    {
+      "query": "screens candidate code against active antibodies matching file path raises antibodyrejectionerror immediately",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.causal.antibody_memory:AntibodyMemory.check_mutation",
+        "onyxsi.server:OnyxSiServer._handle_vfs_mutate",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate",
+        "onyxsi.server:OnyxSiServer._resolve",
+        "onyxsi.deltafs.ast_lease_registry:AstLeaseRegistry.get_active_leases"
+      ],
+      "target": "onyxsi.causal.antibody_memory:AntibodyMemory.check_mutation"
+    },
+    {
+      "query": "checks file within combined overlay disk view",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_exists",
+        "onyxsi.server:OnyxSiServer._read_current",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_read",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._canonicalize",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_delete"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_exists"
+    },
+    {
+      "query": "event scan meth source topology cheap level sweeps heavy lifting bytes find",
+      "rank": 1,
+      "recall_at_5": 0.75,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._string_end",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer"
+    },
+    {
+      "query": "runs outward max hops bitset set tracking prevent cyclic traversal mapping node",
+      "rank": 1,
+      "recall_at_5": 0.8,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bfs_neighbors",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.get_forward_neighbors",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.get_reverse_neighbors"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bfs_neighbors"
+    },
+    {
+      "query": "splits identifiers constituent words handling snake case process manager process manager camelcase",
+      "rank": 1,
+      "recall_at_5": 0.3333,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:tokenize_code",
+        "onyxsi.hal.process_manager:ProcessManager.reload_config",
+        "onyxsi.hal.process_manager:ProcessManager.health_check_all",
+        "onyxsi.hal.process_manager:ProcessManager.get_status",
+        "onyxsi.hal.process_manager:ProcessManager.check_and_reload_config"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:tokenize_code"
+    },
+    {
+      "query": "extracts start start length piece table",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_slice",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_line_range",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.delete",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.get_slice"
+    },
+    {
+      "query": "updates json atomically syncs execution log",
+      "rank": 1,
+      "recall_at_5": 0.5714,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.update_progress",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_json",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.get_progress"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager.update_progress"
+    },
+    {
+      "query": "maps superblock created another process same machine same size windows uses tagged",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.attach",
+        "onyxsi.hal.shm_superblock:_posix_shm_path",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.get_header",
+        "onyxsi.hal.shm_superblock:SuperblockHeader.from_bytes",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text"
+      ],
+      "target": "onyxsi.hal.shm_superblock:SharedMemorySuperblock.attach"
+    },
+    {
+      "query": "stage verifies blast radius test drift ceiling",
+      "rank": 1,
+      "recall_at_5": 0.75,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.compute_drift",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants"
+    },
+    {
+      "query": "marks file deleted ram tombstone",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_delete",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_read",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS._canonicalize",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.pop"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_delete"
+    },
+    {
+      "query": "inserts text bytes byte position pos",
+      "rank": 1,
+      "recall_at_5": 0.2857,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.insert",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.replace",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_brace_language",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.delete",
+        "onyxsi.deltafs.ast_conflict_merger:ConflictFreeAstMerger.merge_patches"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.insert"
+    },
+    {
+      "query": "spills dirty ram pages files under dir",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.in_ram_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.__init__",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.total_dirty_bytes"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk"
+    },
+    {
+      "query": "renders entire document contiguous",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_bytes",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_text",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_line_range",
+        "onyxsi.deltafs.ast_conflict_merger:ConflictFreeAstMerger.merge_patches"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.get_bytes"
+    },
+    {
+      "query": "validates dag steps execution order raises cyclicalpipelineerror cycles",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.topological_sort",
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.execute_pipeline",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate",
+        "onyxsi.server:OnyxSiServer._run_bisect",
+        "onyxsi.gateway.meta_router:MetaToolRouter.invoke"
+      ],
+      "target": "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.topological_sort"
+    },
+    {
+      "query": "reads length bytes starting offset merging baseline dirty pages",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.read_at",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.total_dirty_bytes",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.pop"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.read_at"
+    },
+    {
+      "query": "rebuilds prefix sum log binary search",
+      "rank": 1,
+      "recall_at_5": 0.3333,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument._rebuild_index",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset",
+        "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.prefix_xor",
+        "onyxsi.hal.trie_index:CompactRadixSymbolIndex.prefix_search",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.insert"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument._rebuild_index"
+    },
+    {
+      "query": "pure helper tests tools already hold tool duration",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.hal.telemetry:summarize",
+        "onyxsi.gateway.meta_router:MetaToolRouter.invoke",
+        "onyxsi.gateway.meta_router:MetaToolRouter._emit",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate.runner",
+        "onyxsi.gateway.meta_router:MetaToolRouter.list_tools"
+      ],
+      "target": "onyxsi.hal.telemetry:summarize"
+    },
+    {
+      "query": "folds repetitive lines oversized single lines piecetabledocument backed ref",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.gateway.stream_folder:StreamFolder.fold_stream",
+        "onyxsi.gateway.stream_folder:StreamFolder.fold_stream.flush_run",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine._extract_single_line_reason",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.register_stream_handle",
+        "onyxsi.contextfs.token_governor:TokenGovernor.enforce_ceiling"
+      ],
+      "target": "onyxsi.gateway.stream_folder:StreamFolder.fold_stream"
+    },
+    {
+      "query": "records invocation never raises telemetry must break",
+      "rank": 1,
+      "recall_at_5": 0.3333,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.hal.telemetry:ToolTelemetry.record",
+        "onyxsi.gateway.meta_router:MetaToolRouter._emit",
+        "onyxsi.server:OnyxSiServer.__init__",
+        "onyxsi.hal.telemetry:ToolTelemetry._drain_locked",
+        "onyxsi.hal.telemetry:ToolTelemetry.flush_jsonl"
+      ],
+      "target": "onyxsi.hal.telemetry:ToolTelemetry.record"
+    },
+    {
+      "query": "generates agent inside task folder contains necessary context fresh sub agent resume",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.generate_handoff",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._task_dir",
+        "onyxsi.server:OnyxSiServer._handle_wiki_task_sync",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.get_progress",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager.generate_handoff"
+    },
+    {
+      "query": "releases mmap backing store history remains readable",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.hal.telemetry:ToolTelemetry.close",
+        "onyxsi.hal.telemetry:ToolTelemetry._drain_locked",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.initialize",
+        "onyxsi.hal.telemetry:ToolTelemetry.snapshot",
+        "onyxsi.hal.telemetry:ToolTelemetry.flush_jsonl"
+      ],
+      "target": "onyxsi.hal.telemetry:ToolTelemetry.close"
+    },
+    {
+      "query": "drops delta state deletes spill file number spill files removed safe repeatedly",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.cleanup",
+        "onyxsi.hal.wakeup:WakeupSignal.clear",
+        "onyxsi.hal.telemetry:ToolTelemetry._safe_state",
+        "onyxsi.deltafs.cow_workspace:DualOsCowWorkspace.get_delta_map",
+        "onyxsi.causal.antibody_memory:AntibodyMemory.load"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.cleanup"
+    },
+    {
+      "query": "validates executes meta tool single choke point callers",
+      "rank": 1,
+      "recall_at_5": 0.8333,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter.invoke",
+        "onyxsi.gateway.meta_router:MetaToolRouter._emit",
+        "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate.runner",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.invoke"
+    },
+    {
+      "query": "high speed structural balance top level block extractor balanced max nesting depth",
+      "rank": 1,
+      "recall_at_5": 0.8,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.server:OnyxSiServer._syntax_check",
+        "onyxsi.gateway.grammar_shield:GrammarShield.__init__"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology"
+    },
+    {
+      "query": "computes causal vector fraction modified targets fall outside declared blast radius",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.compute_drift",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.compute_drift"
+    },
+    {
+      "query": "resolves handle uri payload validates ttl source sha freshness",
+      "rank": 1,
+      "recall_at_5": 0.4,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.register_code_handle",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.register_stream_handle",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve_text",
+        "onyxsi.contextfs.token_governor:TokenGovernor.enforce_ceiling"
+      ],
+      "target": "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve"
+    },
+    {
+      "query": "bakes adjacency lists contiguous csr soa arrays topology has changed since last",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bake",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.__init__",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.prepare"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bake"
+    },
+    {
+      "query": "deletes length bytes starting position pos",
+      "rank": 1,
+      "recall_at_5": 0.8,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.delete",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.replace",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.insert",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.coalesce"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.delete"
+    },
+    {
+      "query": "finds index within log bisect prefix sums",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._rebuild_index",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.__init__",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.rollback",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.insert"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument._find_piece_at_offset"
+    },
+    {
+      "query": "index quote closes opened start only escapes next byte matching per byte",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._string_end",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.deltafs.ast_conflict_merger:ConflictFreeAstMerger.merge_patches",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.reset"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._string_end"
+    },
+    {
+      "query": "depth change across byte chunk popcnt popcnt",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.net_brace_delta",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_brace_language",
+        "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.brace_depth_at",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.net_brace_delta"
+    },
+    {
+      "query": "raises sandboxerror unless stays inside workspace root",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.hal.sandbox_enclave:SandboxEnclave.assert_path_allowed",
+        "onyxsi.hal.sandbox_enclave:SandboxEnclave.check_path_access",
+        "onyxsi.server:main",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.__init__",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor.__init__"
+      ],
+      "target": "onyxsi.hal.sandbox_enclave:SandboxEnclave.assert_path_allowed"
+    },
+    {
+      "query": "binds node name executable python",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.register_test_callable",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.process_body_nodes",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner.prune_source",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.get_line_byte_offset"
+      ],
+      "target": "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.register_test_callable"
+    },
+    {
+      "query": "executes hybrid combining bm25 keyword matching hop csr graph expansion top node",
+      "rank": 1,
+      "recall_at_5": 0.375,
+      "relevant": 8,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.prepare",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search.hybrid_score",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.__init__",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.index_node"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search"
+    },
+    {
+      "query": "uri live handle active registry",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.token_governor:TokenGovernor.can_resolve",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.resolve_text",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.register_stream_handle",
+        "onyxsi.contextfs.virtual_handles:VirtualHandleRegistry.cleanup_expired"
+      ],
+      "target": "onyxsi.contextfs.token_governor:TokenGovernor.can_resolve"
+    },
+    {
+      "query": "bits set paint whole string comment regions once",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:_bit_range",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.reset",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:_bit_range"
+    },
+    {
+      "query": "raises mutatelockedbybudgeterror error budget exhausted",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.check_mutate_allowed",
+        "onyxsi.server:OnyxSiServer._handle_vfs_mutate",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.__init__",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.record_failure",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker._normalize"
+      ],
+      "target": "onyxsi.causal.error_budget:ErrorBudgetTracker.check_mutate_allowed"
+    },
+    {
+      "query": "emergency discards ghost ram resets state",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.abort_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.server:OnyxSiServer.shutdown"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.abort_flight"
+    },
+    {
+      "query": "extracts lines start end indexed inclusive",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_line_range",
+        "onyxsi.server:OnyxSiServer._apply_edit",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.process_body_nodes",
+        "onyxsi.deltafs.ast_conflict_merger:ConflictFreeAstMerger.merge_patches",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.get_line_byte_offset"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.get_line_range"
+    },
+    {
+      "query": "name forbidden",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.hal.syscall_guard:SyscallGuard.is_blocked",
+        "onyxsi.causal.antibody_memory:AntibodyRejectionError.__init__",
+        "onyxsi.causal.antibody_memory:AntibodyRecord.to_dict",
+        "onyxsi.causal.antibody_memory:AntibodyRecord.from_dict",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate"
+      ],
+      "target": "onyxsi.hal.syscall_guard:SyscallGuard.is_blocked"
+    },
+    {
+      "query": "parses json string applying deterministic needed",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.gateway.grammar_shield:GrammarShield._repair_json_string",
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_all_meta_tools_gbnf",
+        "onyxsi.server:OnyxSiServer.process_line",
+        "onyxsi.gateway.grammar_shield:GrammarShield._check_nesting_depth"
+      ],
+      "target": "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair"
+    },
+    {
+      "query": "stage declares blast radius initial hypothesis",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.commit_payload"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.begin_pre_flight"
+    },
+    {
+      "query": "walks csr reverse edges modified node max hops test name hop distance",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bfs_neighbors",
+        "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.run_differential_tests",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.bake",
+        "onyxsi.knowledge.csr_graph_bm25:CodeCSRGraph.get_reverse_neighbors"
+      ],
+      "target": "onyxsi.knowledge.blast_test_runner:BlastRadiusTestRunner.select_impacted_tests"
+    },
+    {
+      "query": "renders entire document string",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_text",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_bytes",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_line_range",
+        "onyxsi.deltafs.ast_conflict_merger:ConflictFreeAstMerger.merge_patches",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_commit"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.get_text"
+    },
+    {
+      "query": "writes containing last recorded kernel events",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.causal.micro_wal:MicroWAL.write_crash_repro",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.causal.micro_wal:MicroWAL.get_recent_events",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.causal.micro_wal:MicroWAL.__init__"
+      ],
+      "target": "onyxsi.causal.micro_wal:MicroWAL.write_crash_repro"
+    },
+    {
+      "query": "wraps compact prose surface see meta metatoolspec objects",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.gateway.meta_router:_build_default_8_specs",
+        "onyxsi.gateway.meta_router:MetaToolRouter.__init__",
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.gateway.meta_router:MethodNotFoundError.__init__",
+        "onyxsi.gateway.meta_router:MetaToolRouter.schema_token_count"
+      ],
+      "target": "onyxsi.gateway.meta_router:_build_default_8_specs"
+    },
+    {
+      "query": "staged file parses",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._manifest_invariant",
+        "onyxsi.server:OnyxSiServer._snapshot_flight",
+        "onyxsi.server:OnyxSiServer._read_current",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.modified_paths",
+        "onyxsi.server:OnyxSiServer._manifest_bytes"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._manifest_invariant"
+    },
+    {
+      "query": "always kept explicit callers cannot mistake policy enforcement",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.hal.syscall_guard:SyscallGuard.is_enforcing",
+        "onyxsi.hal.syscall_guard:SyscallGuard.enforcement_backend",
+        "onyxsi.hal.sandbox_enclave:SandboxEnclave.enforcement_backend",
+        "onyxsi.gateway.policy_gate:PolicyGate.__init__",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.add_document"
+      ],
+      "target": "onyxsi.hal.syscall_guard:SyscallGuard.is_enforcing"
+    },
+    {
+      "query": "parsed json data specified task",
+      "rank": 1,
+      "recall_at_5": 0.4,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.get_progress",
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_json",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.update_progress"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager.get_progress"
+    },
+    {
+      "query": "appends timestamped line",
+      "rank": 1,
+      "recall_at_5": 0.25,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log",
+        "onyxsi.hal.telemetry:ToolTelemetry.flush_jsonl",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_line_range",
+        "onyxsi.hal.telemetry:ToolTelemetry._drain_locked",
+        "onyxsi.server:OnyxSiServer.run_stdio_loop"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log"
+    },
+    {
+      "query": "resolves backing file named superblock memfd create cannot opened name another process",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.hal.shm_superblock:_posix_shm_path",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.attach",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.initialize",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.get_header",
+        "onyxsi.hal.shm_superblock:SuperblockHeader.to_bytes"
+      ],
+      "target": "onyxsi.hal.shm_superblock:_posix_shm_path"
+    },
+    {
+      "query": "installs clears invocation telemetry",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter.set_observer",
+        "onyxsi.server:OnyxSiServer.__init__",
+        "onyxsi.hal.telemetry:ToolTelemetry.record",
+        "onyxsi.hal.telemetry:ToolTelemetry.__enter__",
+        "onyxsi.hal.telemetry:ToolTelemetry._drain_locked"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.set_observer"
+    },
+    {
+      "query": "drains ring aggregate view whole history",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.hal.telemetry:ToolTelemetry.snapshot",
+        "onyxsi.hal.telemetry:ToolTelemetry.__init__",
+        "onyxsi.hal.telemetry:ToolTelemetry._drain_locked",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.state",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.pop"
+      ],
+      "target": "onyxsi.hal.telemetry:ToolTelemetry.snapshot"
+    },
+    {
+      "query": "writes content temporary file same directory replaces atomically",
+      "rank": 1,
+      "recall_at_5": 0.5714,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.replace",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.init_task",
+        "onyxsi.auditor:ZeroDepAndZeroUiAuditor.audit_directory"
+      ],
+      "target": "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text"
+    },
+    {
+      "query": "records policy only kernel filter installed",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.hal.syscall_guard:SyscallGuard.enforcement_backend",
+        "onyxsi.hal.telemetry:summarize",
+        "onyxsi.hal.telemetry:ToolTelemetry.flush_jsonl",
+        "onyxsi.gateway.policy_gate:PolicyGate.__init__",
+        "onyxsi.gateway.policy_gate:PolicyGate.mask_secrets"
+      ],
+      "target": "onyxsi.hal.syscall_guard:SyscallGuard.enforcement_backend"
+    },
+    {
+      "query": "executes topological order resolving prev output rolling back failure",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.execute_pipeline",
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor._resolve_bindings",
+        "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.topological_sort",
+        "onyxsi.server:OnyxSiServer._handle_mcp_orchestrate",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure"
+      ],
+      "target": "onyxsi.gateway.pipeline_fusion:MacroPipelineExecutor.execute_pipeline"
+    },
+    {
+      "query": "scans bytes dual bitplane structural masks",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_brace_language",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_python.get_line_byte_offset"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64"
+    },
+    {
+      "query": "validates have falsification probes mutually orthogonal",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine.register_branches",
+        "onyxsi.server:OnyxSiServer._handle_hypothesis_branch",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine._compute_similarity",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine.falsify_branch",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure"
+      ],
+      "target": "onyxsi.causal.hypothesis_engine:HypothesisEngine.register_branches"
+    },
+    {
+      "query": "minimal dependency free json subset validator supports type enum minimum maximum minitems",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.gateway.meta_router:_validate_against_schema",
+        "onyxsi.gateway.grammar_export:GrammarExporter._schema_type_to_gbnf",
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments",
+        "onyxsi.gateway.meta_router:MetaToolRouter.invoke"
+      ],
+      "target": "onyxsi.gateway.meta_router:_validate_against_schema"
+    },
+    {
+      "query": "adds replaces keeping postings duplicate free",
+      "rank": 1,
+      "recall_at_5": 0.6667,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.add_document",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.__init__",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.score",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.build",
+        "onyxsi.knowledge.csr_graph_bm25:tokenize_code"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.add_document"
+    },
+    {
+      "query": "dirty still resident must respect quota",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.in_ram_pages_count",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.build",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.dirty_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.total_dirty_bytes",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.in_ram_pages_count"
+    },
+    {
+      "query": "validates payload against json schema coerces primitive string number mismatches",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.gateway.grammar_shield:GrammarShield.validate_and_coerce",
+        "onyxsi.gateway.grammar_export:GrammarExporter._schema_type_to_gbnf",
+        "onyxsi.gateway.meta_router:_validate_against_schema",
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_all_meta_tools_gbnf",
+        "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments"
+      ],
+      "target": "onyxsi.gateway.grammar_shield:GrammarShield.validate_and_coerce"
+    },
+    {
+      "query": "evaluates mathematical string expression deterministically safely",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.knowledge.compute_alu:eval_math",
+        "onyxsi.knowledge.compute_alu:SafeMathEvaluator.visit_Expression",
+        "onyxsi.server:OnyxSiServer._handle_graph_compute",
+        "onyxsi.knowledge.compute_alu:SafeMathEvaluator.visit",
+        "onyxsi.knowledge.compute_alu:SafeMathEvaluator.visit_Call"
+      ],
+      "target": "onyxsi.knowledge.compute_alu:eval_math"
+    },
+    {
+      "query": "bitplane streaming path byte plane object per block",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.analyze_source_topology",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.reset",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_whole_buffer",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner.scan_chunk_64"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:BitplaneAstScanner._analyze_chunked"
+    },
+    {
+      "query": "gracefully releases lease discards ghost state stops loop",
+      "rank": 1,
+      "recall_at_5": 0.5714,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.server:OnyxSiServer.shutdown",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.abort_flight",
+        "onyxsi.server:OnyxSiServer.run_stdio_loop",
+        "onyxsi.deltafs.ast_lease_registry:AstLeaseRegistry.get_active_leases",
+        "onyxsi.deltafs.ast_lease_registry:AstLeaseRegistry.release_lease"
+      ],
+      "target": "onyxsi.server:OnyxSiServer.shutdown"
+    },
+    {
+      "query": "total tracked whether currently ram spilled",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.dirty_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spilled_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.__init__",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.total_dirty_bytes"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.dirty_pages_count"
+    },
+    {
+      "query": "dirty currently disk",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spilled_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.dirty_pages_count",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.total_dirty_bytes",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spilled_pages_count"
+    },
+    {
+      "query": "finds earliest step steps where invariant doc get bytes automatically rolls doc",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.server:OnyxSiServer._run_bisect",
+        "onyxsi.server:OnyxSiServer._snapshot_flight",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.get_bytes",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.rollback"
+      ],
+      "target": "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure"
+    },
+    {
+      "query": "appends real checkpoint staged file manifest bisect",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 6,
+      "returned": [
+        "onyxsi.server:OnyxSiServer._snapshot_flight",
+        "onyxsi.server:OnyxSiServer._run_bisect",
+        "onyxsi.server:OnyxSiServer._manifest_bytes",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.create_checkpoint"
+      ],
+      "target": "onyxsi.server:OnyxSiServer._snapshot_flight"
+    },
+    {
+      "query": "exact nesting byte offset bit idx within chunk",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.brace_depth_at",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.allocate_slot",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.contextfs.bitplane_ast:BitplaneAstPruner._prune_brace_language",
+        "onyxsi.hal.shm_superblock:SharedMemorySuperblock.free_slot"
+      ],
+      "target": "onyxsi.contextfs.bitplane_ast:CodeChunkBitplanes.brace_depth_at"
+    },
+    {
+      "query": "canonical currently staged session read only view",
+      "rank": 1,
+      "recall_at_5": 0.5,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.modified_paths",
+        "onyxsi.server:OnyxSiServer._read_current",
+        "onyxsi.server:OnyxSiServer._handle_ghost_sandbox",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_read",
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_mutate"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.modified_paths"
+    },
+    {
+      "query": "runs headless event reading stdin responding stdout",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.server:OnyxSiServer.run_stdio_loop",
+        "onyxsi.server:main",
+        "onyxsi.server:OnyxSiServer.shutdown",
+        "onyxsi.server:OnyxSiServer.process_line",
+        "onyxsi.hal.process_manager:ProcessManager.spawn"
+      ],
+      "target": "onyxsi.server:OnyxSiServer.run_stdio_loop"
+    },
+    {
+      "query": "real handler fail closed stub registered",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 1,
+      "returned": [
+        "onyxsi.gateway.meta_router:MetaToolRouter.is_bound",
+        "onyxsi.gateway.meta_router:MetaToolRouter.__init__",
+        "onyxsi.gateway.meta_router:ToolNotBoundError.__init__",
+        "onyxsi.gateway.meta_router:MetaToolRouter._unbound_handler",
+        "onyxsi.hal.telemetry:ToolTelemetry.closed"
+      ],
+      "target": "onyxsi.gateway.meta_router:MetaToolRouter.is_bound"
+    },
+    {
+      "query": "heuristic chars per token rule thumb tokenizer",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.contextfs.token_governor:TokenGovernor.estimate_tokens",
+        "onyxsi.contextfs.token_governor:TokenGovernor.enforce_ceiling",
+        "onyxsi.gateway.meta_router:MetaToolRouter.schema_token_count",
+        "onyxsi.gateway.grammar_export:GrammarExporter.export_tool_gbnf",
+        "onyxsi.gateway.meta_router:MetaToolRouter.__init__"
+      ],
+      "target": "onyxsi.contextfs.token_governor:TokenGovernor.estimate_tokens"
+    },
+    {
+      "query": "decrements error budget locks mutation budget reaches",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.record_failure",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker._normalize",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.__init__",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.check_mutate_allowed",
+        "onyxsi.causal.error_budget:ErrorBudgetTracker.reflection_gate"
+      ],
+      "target": "onyxsi.causal.error_budget:ErrorBudgetTracker.record_failure"
+    },
+    {
+      "query": "aborts speculative edits instantly ram disk remains untouched",
+      "rank": 1,
+      "recall_at_5": 0.7143,
+      "relevant": 7,
+      "returned": [
+        "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.abort_flight",
+        "onyxsi.server:OnyxSiServer.shutdown",
+        "onyxsi.causal.hypothesis_engine:HypothesisEngine.falsify_branch",
+        "onyxsi.server:OnyxSiServer._handle_vfs_mutate"
+      ],
+      "target": "onyxsi.deltafs.ghost_overlay:GhostOverlayFS.ghost_discard"
+    },
+    {
+      "query": "recomputes corpus statistics postings authoritative incremental",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.build",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.prepare",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.add_document",
+        "onyxsi.knowledge.csr_graph_bm25:HybridSearchEngine.search",
+        "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.score"
+      ],
+      "target": "onyxsi.knowledge.csr_graph_bm25:TunedBM25Index.build"
+    },
+    {
+      "query": "console entry point onyxsi workspace dir allow mutation without flush runs headless",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.server:main",
+        "onyxsi.server:OnyxSiServer.run_stdio_loop",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager.append_execution_log",
+        "onyxsi.knowledge.task_wiki:TaskWikiManager._atomic_write_text",
+        "onyxsi.server:OnyxSiServer.shutdown"
+      ],
+      "target": "onyxsi.server:main"
+    },
+    {
+      "query": "processes single raw json rpc text formatted reply",
+      "rank": 1,
+      "recall_at_5": 0.6,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.server:OnyxSiServer.process_line",
+        "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc",
+        "onyxsi.gateway.grammar_shield:GrammarShield.parse_and_repair",
+        "onyxsi.server:OnyxSiServer._handle_single_request",
+        "onyxsi.gateway.meta_router:MetaToolRouter.dispatch_rpc._reply"
+      ],
+      "target": "onyxsi.server:OnyxSiServer.process_line"
+    },
+    {
+      "query": "tool definitions plain dicts name description input schema",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 2,
+      "returned": [
+        "onyxsi.gateway._meta_specs:build_raw_specs",
+        "onyxsi.gateway.meta_router:MetaToolSpec.to_mcp_dict",
+        "onyxsi.gateway.meta_router:_build_default_8_specs",
+        "onyxsi.gateway.meta_router:MetaToolRouter.__init__",
+        "onyxsi.gateway.meta_router:MetaToolRouter.validate_arguments"
+      ],
+      "target": "onyxsi.gateway._meta_specs:build_raw_specs"
+    },
+    {
+      "query": "writes data byte offset dirtying only overlapping pages",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 4,
+      "returned": [
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.read_at",
+        "onyxsi.hal.ring_buffer:SPSCRingBuffer.pop",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.spillover_to_disk",
+        "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.total_dirty_bytes"
+      ],
+      "target": "onyxsi.deltafs.cow_workspace:SparsePageDeltaMap.write_at"
+    },
+    {
+      "query": "stage records ram mutation checks live causal drift vector",
+      "rank": 1,
+      "recall_at_5": 0.8,
+      "relevant": 5,
+      "returned": [
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn",
+        "onyxsi.server:OnyxSiServer._handle_causal_flight",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.compute_drift",
+        "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.verify_invariants",
+        "onyxsi.server:OnyxSiServer._handle_vfs_mutate"
+      ],
+      "target": "onyxsi.causal.trajectory:CausalTrajectoryEnforcer.record_ghost_burn"
+    },
+    {
+      "query": "rolls back forward document state checkpoint microsecond time preserves append only add",
+      "rank": 1,
+      "recall_at_5": 1.0,
+      "relevant": 3,
+      "returned": [
+        "onyxsi.contextfs.piece_table:PieceTableDocument.rollback",
+        "onyxsi.causal.causal_bisect:CausalBisectEngine.bisect_failure",
+        "onyxsi.contextfs.piece_table:PieceTableDocument.create_checkpoint",
+        "onyxsi.contextfs.piece_table:PieceTableDocument._rebuild_index",
+        "onyxsi.server:OnyxSiServer._run_bisect"
+      ],
+      "target": "onyxsi.contextfs.piece_table:PieceTableDocument.rollback"
+    }
+  ]
+}

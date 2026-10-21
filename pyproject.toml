@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onyxsi"
+version = "1.0.0"
+description = "Pure Headless Zero-Dependency Autonomous Agent Kernel, ContextFS & Causal Execution Box"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "xTanTHaix", email = "xtanxdev@gmail.com"}
+]
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+]
+
+[project.scripts]
+onyxsi = "onyxsi.server:main"
+
+[project.optional-dependencies]
+# The runtime is deliberately dependency-free; pytest is only needed to run the suite.
+test = ["pytest>=8.0"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["onyxsi*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*", "CT*"]
+python_functions = ["test_*"]
+addopts = ["--strict-markers", "--tb=short"]
+markers = [
+    "normal: Normal 1:1 spec verification tests",
+    "street: Chaos and fuzzing stress tests",
+    "character: Core scenario tests",
+    "slow: Slow tests that take > 10s",
+    "integration: Integration tests for full system",
+    "platform_windows: Windows-only tests",
+    "platform_linux: Linux-only tests",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning",
+    "ignore::UserWarning",
+]

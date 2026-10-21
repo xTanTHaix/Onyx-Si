@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "onyxsi": {
+        "type": "local",
+        "command": ["python", "onyxsi-mcp.py", "--workspace", "."],
+        "codemode": true,
+        "timeout": {
+          "startup": 60000,
+          "catalog": 30000,
+          "execution": 600000
+        }
+      }
+    }
+  }
+}

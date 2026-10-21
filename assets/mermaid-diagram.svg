@@ -1,0 +1,306 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1372.5879999999997 768" width="1372.5879999999997" height="768" style="--bg:#FFFFFF;--fg:#3B3B3B;--line:#3B3B3B;--accent:#005FB8;--muted:#3B3B3BCC;--surface:#F8F8F8;--border:#3B3B3B;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  .mono { font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', ui-monospace, monospace; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+</defs>
+<polyline class="er-relationship" data-entity1="SHARED_MEMORY_SUPERBLOCK" data-entity2="WORKER_SLOT" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="allocates" points="901.1999999999998,372 1169.2579999999998,372" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="SHARED_MEMORY_SUPERBLOCK" data-entity2="SPSC_RING_BUFFER" data-cardinality1="one" data-cardinality2="one" data-identifying="true" data-label="backs_telemetry" points="901.1999999999998,390.66666666666663 911.1999999999998,390.6666666666667 911.1999999999998,498 1169.2579999999998,498" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="TOKEN_GOVERNOR" data-entity2="VIRTUAL_HANDLE" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="registers_folded_payload" points="192.95599999999996,144 504.96999999999997,144" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="PIECE_TABLE_DOCUMENT" data-entity2="NANO_CHECKPOINT" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="snapshots_undo_state" points="241.12099999999995,220 538.879,220" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="GHOST_OVERLAY_FS" data-entity2="GHOST_BRANCH" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="maintains_forks" points="209.25799999999992,68 473.75199999999995,68" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="AST_LEASE_REGISTRY" data-entity2="AST_LEASE" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="tracks_node_locks" points="814.8659999999999,68 1097.1799999999998,68" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="CAUSAL_TRAJECTORY" data-entity2="FLIGHT_CHECKPOINT" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="records_drift_and_burn" points="742.4119999999999,296 1047.298,296" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="ERROR_BUDGET_TRACKER" data-entity2="CAUSAL_TRAJECTORY" data-cardinality1="one" data-cardinality2="one" data-identifying="true" data-label="gates_mutation_permission" points="244.8259999999999,296 562.78,296" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="ANTIBODY_MEMORY" data-entity2="STRUCTURAL_ANTIBODY" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="stores_ast_vaccines" points="832.3639999999999,144 1122.994,144" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="TASK_WIKI_MANAGER" data-entity2="TASK_FOLDER" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="synchronizes_state" points="210.73999999999995,583.3333333333334 495.42999999999995,583.3333333333334" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="TASK_FOLDER" data-entity2="AGENT_HANDOFF" data-cardinality1="one" data-cardinality2="one" data-identifying="true" data-label="generates_zero_second_transfer" points="635.43,592.6666666666667 645.43,592.6666666666666 645.43,700 987.836,700" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="TASK_FOLDER" data-entity2="TIME_TRAVEL_CHRONICLE" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="persists_markdown_history" points="635.43,574 987.836,574" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="CODE_CSR_GRAPH" data-entity2="GRAPH_NODE" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="maps_ast_symbols" points="191.47399999999993,390.66666666666663 201.47399999999993,390.6666666666667 201.47399999999993,498 496.35999999999996,498" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="CODE_CSR_GRAPH" data-entity2="GRAPH_EDGE" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="links_calls_and_imports" points="191.47399999999993,372 496.35999999999996,372" fill="none" stroke="var(--_line)" stroke-width="1" />
+<g class="entity" data-id="SHARED_MEMORY_SUPERBLOCK" data-label="SHARED_MEMORY_SUPERBLOCK">
+  <rect x="656.3599999999999" y="353.3333333333333" width="244.83999999999992" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="656.3599999999999" y="353.3333333333333" width="244.83999999999992" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="778.7799999999999" y="370.3333333333333" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">SHARED_MEMORY_SUPERBLOCK</text>
+  <line x1="656.3599999999999" y1="387.3333333333333" x2="901.1999999999998" y2="387.3333333333333" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="778.7799999999999" y="398.3333333333333" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="WORKER_SLOT" data-label="WORKER_SLOT">
+  <rect x="1169.2579999999998" y="344" width="140" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1169.2579999999998" y="344" width="140" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1239.2579999999998" y="361" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">WORKER_SLOT</text>
+  <line x1="1169.2579999999998" y1="378" x2="1309.2579999999998" y2="378" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1239.2579999999998" y="389" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="SPSC_RING_BUFFER" data-label="SPSC_RING_BUFFER">
+  <rect x="1169.2579999999998" y="470" width="163.32999999999996" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1169.2579999999998" y="470" width="163.32999999999996" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1250.9229999999998" y="487" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">SPSC_RING_BUFFER</text>
+  <line x1="1169.2579999999998" y1="504" x2="1332.5879999999997" y2="504" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1250.9229999999998" y="515" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="TOKEN_GOVERNOR" data-label="TOKEN_GOVERNOR">
+  <rect x="40" y="116" width="152.95599999999996" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="116" width="152.95599999999996" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="116.47799999999998" y="133" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">TOKEN_GOVERNOR</text>
+  <line x1="40" y1="150" x2="192.95599999999996" y2="150" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="116.47799999999998" y="161" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="VIRTUAL_HANDLE" data-label="VIRTUAL_HANDLE">
+  <rect x="504.96999999999997" y="116" width="147.02799999999996" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="504.96999999999997" y="116" width="147.02799999999996" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="578.4839999999999" y="133" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">VIRTUAL_HANDLE</text>
+  <line x1="504.96999999999997" y1="150" x2="651.9979999999999" y2="150" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="578.4839999999999" y="161" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="PIECE_TABLE_DOCUMENT" data-label="PIECE_TABLE_DOCUMENT">
+  <rect x="40" y="192" width="201.12099999999995" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="192" width="201.12099999999995" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="140.5605" y="209" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">PIECE_TABLE_DOCUMENT</text>
+  <line x1="40" y1="226" x2="241.12099999999995" y2="226" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="140.5605" y="237" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="NANO_CHECKPOINT" data-label="NANO_CHECKPOINT">
+  <rect x="538.879" y="192" width="155.91999999999996" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="538.879" y="192" width="155.91999999999996" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="616.8389999999999" y="209" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">NANO_CHECKPOINT</text>
+  <line x1="538.879" y1="226" x2="694.799" y2="226" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="616.8389999999999" y="237" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="GHOST_OVERLAY_FS" data-label="GHOST_OVERLAY_FS">
+  <rect x="40" y="40" width="169.25799999999992" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="40" width="169.25799999999992" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="124.62899999999996" y="57" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">GHOST_OVERLAY_FS</text>
+  <line x1="40" y1="74" x2="209.25799999999992" y2="74" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="124.62899999999996" y="85" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="GHOST_BRANCH" data-label="GHOST_BRANCH">
+  <rect x="473.75199999999995" y="40" width="140" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="473.75199999999995" y="40" width="140" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="543.752" y="57" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">GHOST_BRANCH</text>
+  <line x1="473.75199999999995" y1="74" x2="613.752" y2="74" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="543.752" y="85" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="AST_LEASE_REGISTRY" data-label="AST_LEASE_REGISTRY">
+  <rect x="633.752" y="40" width="181.11399999999995" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="633.752" y="40" width="181.11399999999995" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="724.309" y="57" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">AST_LEASE_REGISTRY</text>
+  <line x1="633.752" y1="74" x2="814.8659999999999" y2="74" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="724.309" y="85" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="AST_LEASE" data-label="AST_LEASE">
+  <rect x="1097.1799999999998" y="40" width="140" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1097.1799999999998" y="40" width="140" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1167.1799999999998" y="57" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">AST_LEASE</text>
+  <line x1="1097.1799999999998" y1="74" x2="1237.1799999999998" y2="74" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1167.1799999999998" y="85" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="CAUSAL_TRAJECTORY" data-label="CAUSAL_TRAJECTORY">
+  <rect x="562.78" y="268" width="179.63199999999992" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="562.78" y="268" width="179.63199999999992" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="652.5959999999999" y="285" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">CAUSAL_TRAJECTORY</text>
+  <line x1="562.78" y1="302" x2="742.4119999999999" y2="302" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="652.5959999999999" y="313" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="FLIGHT_CHECKPOINT" data-label="FLIGHT_CHECKPOINT">
+  <rect x="1047.298" y="268" width="167.77599999999993" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1047.298" y="268" width="167.77599999999993" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1131.186" y="285" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">FLIGHT_CHECKPOINT</text>
+  <line x1="1047.298" y1="302" x2="1215.0739999999998" y2="302" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1131.186" y="313" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="ERROR_BUDGET_TRACKER" data-label="ERROR_BUDGET_TRACKER">
+  <rect x="40" y="268" width="204.8259999999999" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="268" width="204.8259999999999" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="142.41299999999995" y="285" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">ERROR_BUDGET_TRACKER</text>
+  <line x1="40" y1="302" x2="244.8259999999999" y2="302" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="142.41299999999995" y="313" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="ANTIBODY_MEMORY" data-label="ANTIBODY_MEMORY">
+  <rect x="671.9979999999999" y="116" width="160.36599999999996" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="671.9979999999999" y="116" width="160.36599999999996" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="752.1809999999999" y="133" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">ANTIBODY_MEMORY</text>
+  <line x1="671.9979999999999" y1="150" x2="832.3639999999999" y2="150" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="752.1809999999999" y="161" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="STRUCTURAL_ANTIBODY" data-label="STRUCTURAL_ANTIBODY">
+  <rect x="1122.994" y="116" width="191.48799999999994" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1122.994" y="116" width="191.48799999999994" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1218.7379999999998" y="133" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">STRUCTURAL_ANTIBODY</text>
+  <line x1="1122.994" y1="150" x2="1314.482" y2="150" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1218.7379999999998" y="161" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="TASK_WIKI_MANAGER" data-label="TASK_WIKI_MANAGER">
+  <rect x="40" y="555.3333333333334" width="170.73999999999995" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="555.3333333333334" width="170.73999999999995" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="125.36999999999998" y="572.3333333333334" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">TASK_WIKI_MANAGER</text>
+  <line x1="40" y1="589.3333333333334" x2="210.73999999999995" y2="589.3333333333334" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="125.36999999999998" y="600.3333333333334" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="TASK_FOLDER" data-label="TASK_FOLDER">
+  <rect x="495.42999999999995" y="555.3333333333334" width="140" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="495.42999999999995" y="555.3333333333334" width="140" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="565.43" y="572.3333333333334" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">TASK_FOLDER</text>
+  <line x1="495.42999999999995" y1="589.3333333333334" x2="635.43" y2="589.3333333333334" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="565.43" y="600.3333333333334" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="AGENT_HANDOFF" data-label="AGENT_HANDOFF">
+  <rect x="987.836" y="672" width="144.06399999999996" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="987.836" y="672" width="144.06399999999996" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1059.868" y="689" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">AGENT_HANDOFF</text>
+  <line x1="987.836" y1="706" x2="1131.9" y2="706" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1059.868" y="717" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="TIME_TRAVEL_CHRONICLE" data-label="TIME_TRAVEL_CHRONICLE">
+  <rect x="987.836" y="546" width="204.08499999999992" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="987.836" y="546" width="204.08499999999992" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1089.8785" y="563" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">TIME_TRAVEL_CHRONICLE</text>
+  <line x1="987.836" y1="580" x2="1191.9209999999998" y2="580" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1089.8785" y="591" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="CODE_CSR_GRAPH" data-label="CODE_CSR_GRAPH">
+  <rect x="40" y="353.3333333333333" width="151.47399999999993" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="353.3333333333333" width="151.47399999999993" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="115.73699999999997" y="370.3333333333333" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">CODE_CSR_GRAPH</text>
+  <line x1="40" y1="387.3333333333333" x2="191.47399999999993" y2="387.3333333333333" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="115.73699999999997" y="398.3333333333333" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="GRAPH_NODE" data-label="GRAPH_NODE">
+  <rect x="496.35999999999996" y="470" width="140" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="496.35999999999996" y="470" width="140" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="566.3599999999999" y="487" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">GRAPH_NODE</text>
+  <line x1="496.35999999999996" y1="504" x2="636.3599999999999" y2="504" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="566.3599999999999" y="515" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<g class="entity" data-id="GRAPH_EDGE" data-label="GRAPH_EDGE">
+  <rect x="496.35999999999996" y="344" width="140" height="56" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="496.35999999999996" y="344" width="140" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="566.3599999999999" y="361" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">GRAPH_EDGE</text>
+  <line x1="496.35999999999996" y1="378" x2="636.3599999999999" y2="378" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="566.3599999999999" y="389" text-anchor="middle" dy="0.35em" font-size="11" fill="var(--_text-faint)" font-style="italic">(no attributes)</text>
+</g>
+<line x1="905.1999999999998" y1="366" x2="905.1999999999998" y2="378" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="909.1999999999998" y1="366" x2="909.1999999999998" y2="378" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1165.2579999999998" y1="379" x2="1153.2579999999998" y2="372" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1165.2579999999998" y1="372" x2="1153.2579999999998" y2="372" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1165.2579999999998" y1="365" x2="1153.2579999999998" y2="372" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1149.2579999999998" cy="372" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="905.1999999999998" y1="384.66666666666663" x2="905.1999999999998" y2="396.66666666666663" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="909.1999999999998" y1="384.66666666666663" x2="909.1999999999998" y2="396.66666666666663" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1165.2579999999998" y1="504" x2="1165.2579999999998" y2="492" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1161.2579999999998" y1="504" x2="1161.2579999999998" y2="492" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="196.95599999999996" y1="138" x2="196.95599999999996" y2="150" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="200.95599999999996" y1="138" x2="200.95599999999996" y2="150" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="500.96999999999997" y1="151" x2="488.96999999999997" y2="144" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="500.96999999999997" y1="144" x2="488.96999999999997" y2="144" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="500.96999999999997" y1="137" x2="488.96999999999997" y2="144" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="484.96999999999997" cy="144" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="245.12099999999995" y1="214" x2="245.12099999999995" y2="226" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="249.12099999999995" y1="214" x2="249.12099999999995" y2="226" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="534.879" y1="227" x2="522.879" y2="220" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="534.879" y1="220" x2="522.879" y2="220" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="534.879" y1="213" x2="522.879" y2="220" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="518.879" cy="220" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="213.25799999999992" y1="62" x2="213.25799999999992" y2="74" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="217.25799999999992" y1="62" x2="217.25799999999992" y2="74" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="469.75199999999995" y1="75" x2="457.75199999999995" y2="68" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="469.75199999999995" y1="68" x2="457.75199999999995" y2="68" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="469.75199999999995" y1="61" x2="457.75199999999995" y2="68" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="453.75199999999995" cy="68" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="818.8659999999999" y1="62" x2="818.8659999999999" y2="74" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="822.8659999999999" y1="62" x2="822.8659999999999" y2="74" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1093.1799999999998" y1="75" x2="1081.1799999999998" y2="68" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1093.1799999999998" y1="68" x2="1081.1799999999998" y2="68" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1093.1799999999998" y1="61" x2="1081.1799999999998" y2="68" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1077.1799999999998" cy="68" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="746.4119999999999" y1="290" x2="746.4119999999999" y2="302" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="750.4119999999999" y1="290" x2="750.4119999999999" y2="302" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1043.298" y1="303" x2="1031.298" y2="296" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1043.298" y1="296" x2="1031.298" y2="296" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1043.298" y1="289" x2="1031.298" y2="296" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1027.298" cy="296" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="248.8259999999999" y1="290" x2="248.8259999999999" y2="302" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="252.8259999999999" y1="290" x2="252.8259999999999" y2="302" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="558.78" y1="302" x2="558.78" y2="290" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="554.78" y1="302" x2="554.78" y2="290" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="836.3639999999999" y1="138" x2="836.3639999999999" y2="150" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="840.3639999999999" y1="138" x2="840.3639999999999" y2="150" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1118.994" y1="151" x2="1106.994" y2="144" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1118.994" y1="144" x2="1106.994" y2="144" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1118.994" y1="137" x2="1106.994" y2="144" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1102.994" cy="144" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="214.73999999999995" y1="577.3333333333334" x2="214.73999999999995" y2="589.3333333333334" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="218.73999999999995" y1="577.3333333333334" x2="218.73999999999995" y2="589.3333333333334" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="491.42999999999995" y1="590.3333333333334" x2="479.42999999999995" y2="583.3333333333334" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="491.42999999999995" y1="583.3333333333334" x2="479.42999999999995" y2="583.3333333333334" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="491.42999999999995" y1="576.3333333333334" x2="479.42999999999995" y2="583.3333333333334" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="475.42999999999995" cy="583.3333333333334" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="639.4299999999998" y1="586.6666666666667" x2="639.4300000000001" y2="598.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="643.4299999999998" y1="586.6666666666667" x2="643.4300000000001" y2="598.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="983.836" y1="706" x2="983.836" y2="694" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="979.836" y1="706" x2="979.836" y2="694" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="639.43" y1="568" x2="639.43" y2="580" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="643.43" y1="568" x2="643.43" y2="580" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="983.836" y1="581" x2="971.836" y2="574" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="983.836" y1="574" x2="971.836" y2="574" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="983.836" y1="567" x2="971.836" y2="574" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="967.836" cy="574" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="195.47399999999996" y1="384.66666666666663" x2="195.4739999999999" y2="396.66666666666663" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="199.47399999999996" y1="384.66666666666663" x2="199.4739999999999" y2="396.66666666666663" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="492.35999999999996" y1="505" x2="480.35999999999996" y2="498" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="492.35999999999996" y1="498" x2="480.35999999999996" y2="498" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="492.35999999999996" y1="491" x2="480.35999999999996" y2="498" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="476.35999999999996" cy="498" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="195.47399999999993" y1="366" x2="195.47399999999993" y2="378" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="199.47399999999993" y1="366" x2="199.47399999999993" y2="378" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="492.35999999999996" y1="379" x2="480.35999999999996" y2="372" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="492.35999999999996" y1="372" x2="480.35999999999996" y2="372" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="492.35999999999996" y1="365" x2="480.35999999999996" y2="372" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="476.35999999999996" cy="372" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<rect x="1009.0199999999998" y="361.85" width="52.418000000000006" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1035.2289999999998" y="372" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">allocates</text>
+<rect x="937.5333333333332" y="487.85" width="88.05800000000002" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="981.5623333333332" y="498" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">backs_telemetry</text>
+<rect x="282.95599999999996" y="133.85" width="132.014" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="348.96299999999997" y="144" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">registers_folded_payload</text>
+<rect x="331.121" y="209.85" width="117.75800000000001" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="390" y="220" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">snapshots_undo_state</text>
+<rect x="299.2579999999999" y="57.85" width="84.49400000000003" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="341.50499999999994" y="68" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">maintains_forks</text>
+<rect x="904.8659999999999" y="57.85" width="102.31400000000001" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="956.0229999999999" y="68" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">tracks_node_locks</text>
+<rect x="832.412" y="285.85" width="124.88600000000004" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="894.855" y="296" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">records_drift_and_burn</text>
+<rect x="334.8259999999999" y="285.85" width="137.954" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="403.80299999999994" y="296" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">gates_mutation_permission</text>
+<rect x="922.3639999999998" y="133.85" width="110.63000000000001" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="977.6789999999999" y="144" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">stores_ast_vaccines</text>
+<rect x="300.7399999999999" y="573.1833333333334" width="104.69000000000001" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="353.0849999999999" y="583.3333333333334" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">synchronizes_state</text>
+<rect x="671.7633333333333" y="689.85" width="172.406" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="757.9663333333333" y="700" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">generates_zero_second_transfer</text>
+<rect x="740.2800000000001" y="563.85" width="142.706" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="811.633" y="574" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">persists_markdown_history</text>
+<rect x="240.2813333333333" y="487.85" width="99.93800000000002" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="290.2503333333333" y="498" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">maps_ast_symbols</text>
+<rect x="281.4739999999999" y="361.85" width="124.88600000000004" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="343.9169999999999" y="372" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">links_calls_and_imports</text>
+</svg>
