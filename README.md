@@ -62,7 +62,7 @@
 
 <div align="center">
 
-<img src="assets/slide/2.jpg" width="78%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="Slide 2: The Entropy of Modern Coding Agents" />
+<img src="assets/slide/2.jpg" width="82%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="Slide 2: The Entropy of Modern Coding Agents" />
 
 </div>
 
@@ -76,7 +76,7 @@
 
 <div align="center">
 
-<img src="assets/slide/3.jpg" width="78%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="Slide 3: Replacing Linear Trial-and-Error with Governed Architecture" />
+<img src="assets/slide/3.jpg" width="82%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="Slide 3: Replacing Linear Trial-and-Error with Governed Architecture" />
 
 </div>
 
@@ -91,7 +91,7 @@
 
 <div align="center">
 
-<img src="assets/slide/4.jpg" width="78%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="Slide 4: Seven Decoupled Layers Governed at Boot" />
+<img src="assets/slide/4.jpg" width="82%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="Slide 4: Seven Decoupled Layers Governed at Boot" />
 
 </div>
 
