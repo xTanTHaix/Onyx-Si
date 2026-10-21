@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/onyxsi-logo.png" width="180" alt="OnyxSi Logo" />
+<img src="assets/onyxsi-logo.png" width="250" alt="OnyxSi Logo" />
 
 # ⚡ OnyxSi (Onyx-Si)
 ### Pure Headless Zero-Dependency Autonomous Agent Kernel, ContextFS & Causal Execution Box
@@ -748,13 +748,9 @@ onyxsi-mcp.cmd --workspace C:\path\to\your\project
 
 If OnyxSi is useful in your agent workflows or saves context tokens, consider supporting continued development:
 
-<div align="center">
-
 <a href="https://ko-fi.com/xtanthaix" target="_blank">
-  <img src="https://storage.ko-fi.com/cdn/kofi3.png?v=3" height="46" style="border:0px;height:46px;" alt="Support on Ko-fi" />
+  <img src="https://storage.ko-fi.com/cdn/kofi3.png?v=3" height="42" style="border:0px;height:42px;" alt="Support on Ko-fi" />
 </a>
-
-</div>
 
 ---
 
